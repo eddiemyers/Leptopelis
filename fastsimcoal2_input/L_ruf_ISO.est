@@ -1,0 +1,21 @@
+// Priors and rules file
+// *********************
+
+[PARAMETERS]
+//#isInt? #name   #dist.#min  #max
+//all N are in number of haploid individuals
+1  ANCSIZE1    unif     10000    500000   hide
+1  ANCSIZE2    unif     10000    500000   hide
+1  sGab        unif     10000    500000   output
+1  nGab        unif     10000    500000   output
+1  Camer         unif     10000    500000   output
+1  TDIV_PLUS      unif     1000    1000000   hide
+1  TDIV_Cam_N  unif     10000    1000000   output
+
+[RULES]
+
+[COMPLEX PARAMETERS]
+
+1  TDIV_S = TDIV_Cam_N+TDIV_PLUS     output
+0  ANC_Cam_N = ANCSIZE1/nGab     output
+0  LEP_ANC = ANCSIZE2/ANC_Cam_N      output

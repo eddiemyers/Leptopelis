@@ -1,0 +1,45 @@
+// Priors and rules file
+// *********************
+
+[PARAMETERS]
+//#isInt? #name   #dist.#min  #max
+//all N are in number of haploid individuals
+1  ANCSIZE1    unif     10000    500000   hide
+1  ANCSIZE2    unif     10000    500000   hide
+1  sGab        unif     10000    500000   output
+1  nGab        unif     10000    500000   output
+1  Camer         unif     10000    500000   output
+1  TDIV_PLUS      unif     1000    1000000   hide
+1  TDIV_Cam_N  unif     10000    1000000   output
+1  NPOP_1PreExp unif     100  100000   output
+1  NPOP_2PreExp unif     100  100000   output
+1  NPOP_3PreExp unif     100  100000   output
+0  NM_SN       logunif  1e-2 20       hide
+0  NM_NS       logunif  1e-2 20       hide
+0  NM_NC       logunif  1e-2 20       hide
+0  NM_CN       logunif  1e-2 20       hide
+0  NM_SA       logunif  1e-2 20       hide
+0  NM_AS       logunif  1e-2 20       hide
+
+[RULES]
+
+[COMPLEX PARAMETERS]
+
+1  TDIV_S = TDIV_Cam_N+TDIV_PLUS     output
+0  ANC_Cam_N = ANCSIZE1/nGab     output
+0  LEP_ANC = ANCSIZE2/ANC_Cam_N      output
+0  RATIO1  = NPOP_1PreExp/sGab hide
+0  RTEA1   = log ( RATIO1 )     hide
+0  Grow1  = RTEA1/TDIV_S         hide
+0  RATIO2  = NPOP_2PreExp/nGab hide
+0  RTEA2   = log ( RATIO2 )     hide
+0  Grow2  = RTEA2/TDIV_Cam_N         hide
+0  RATIO3  = NPOP_3PreExp/Camer hide
+0  RTEA3   = log ( RATIO3 )     hide
+0  Grow3  = RTEA3/TDIV_Cam_N         hide
+0  MIG_SN  = NM_SN/sGab          output
+0  MIG_NS   = NM_NS/nGab           output
+0  MIG_NC =  NM_NC/nGab            output
+0  MIG_CN  =  NM_CN/Camer          output
+0  MIG_SA  =  NM_SA/sGab           output
+0  MIG_AS  =  NM_AS/ANC_Cam_N        output
