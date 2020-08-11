@@ -1,5 +1,5 @@
 
-#Written by E. A. Myers but was modified (and largely based on!!) from scripts written by Juan Luis Parra 
+#Written by E. A. Myers but was modified from (and largely based on!!) scripts written by Juan Luis Parra 
 #(for 'Curso de Modelado de Nichos Ecologicos y Distribuciones Geograficas', Marzo 2017)
 #August 2020
 #If used please cite the following papers:
