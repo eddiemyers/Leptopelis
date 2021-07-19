@@ -1,5 +1,5 @@
 # Leptopelis Project
-Data and R scripts from Leptopelis 2020 manuscript
+Data and R scripts from Leptopelis 2021 manuscript
 
 This repository holds data, input files, and R scripts used in a collaborative project about the phylogeography and species limits of Central and West African frogs in the genus Leptopelis. 
 
